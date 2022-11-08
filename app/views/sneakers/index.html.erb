@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Sneakers</h1>
+
+<div id="sneakers">
+  <% @sneakers.each do |sneaker| %>
+     <h1><%= sneaker.name %></h1>
+     <h3><%= sneaker.model %></h3>
+    <p>
+      <%= link_to "Show this sneaker", sneaker %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New sneaker", new_sneaker_path %>

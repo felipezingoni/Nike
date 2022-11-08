@@ -1,0 +1,35 @@
+.title {
+  font-family: "Futura Bold";
+  position: absolute;
+  top: 300px;
+  left: 50px;
+  font-size: 60px;
+}
+
+.logo {
+  position: absolute;
+  left: 40px;
+}
+
+.ham {
+  font-size: 40px;
+  color: #000000;
+  position: absolute;
+  right: 40px;
+  top: 61px;
+}
+
+
+.back {
+  background-color: #30221f33;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 23px;
+  right: 23px;
+}

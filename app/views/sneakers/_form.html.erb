@@ -1,0 +1,12 @@
+<%= simple_form_for @sneaker do |f| %>
+  <%= f.input :name, autofocus: true, autocomplete: "name" %>
+  <%= f.input :model, autofocus: true, autocomplete: "Model" %>
+  <%= f.input :description, autofocus: true, autocomplete: "Description" %>
+  <%= f.input :status, autofocus: true, autocomplete: "New model" %>
+  <%= f.input :price %>
+
+
+  <div>
+    <%= f.button :submit %>
+  </div>
+<% end %>

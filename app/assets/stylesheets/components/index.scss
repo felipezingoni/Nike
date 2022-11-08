@@ -1,0 +1,12 @@
+@import "components/navbar";
+@import "components/home";
+
+@font-face {
+  font-family: "Futura Bold";
+  src: url('fonts/Futura Condensed Bold.otf');
+  font-weight: bold;
+}
+
+body {
+  margin: 0;
+}
