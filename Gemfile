@@ -26,7 +26,7 @@ gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
-gem 'json'
+# gem 'json'
 gem 'simple_form'
 gem 'sneakers'
 # Use Redis adapter to run Action Cable in production
@@ -46,6 +46,7 @@ gem "bootsnap", require: false
 
 # Use Sass to process CSS
 gem "sassc-rails"
+# gem 'bootsnap', '<= 1.1.0'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

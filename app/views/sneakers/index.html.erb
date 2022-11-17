@@ -1,15 +1,28 @@
+<%= render 'shared/navbar' %>
 <p style="color: green"><%= notice %></p>
 
-<h1>Sneakers</h1>
 
-<div id="sneakers">
-  <% @sneakers.each do |sneaker| %>
-     <h1><%= sneaker.name %></h1>
-     <h3><%= sneaker.model %></h3>
-    <p>
-      <%= link_to "Show this sneaker", sneaker %>
-    </p>
-  <% end %>
+<div class="row">
+  <div class="col-3">
+
+  </div>
+  <div class="col-9">
+    <h1>Sneakers</h1>
+
+    <div id="sneakers" style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
+      <% @sneakers.each do |sneaker| %>
+        <div>
+          <%= image_tag("https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/b0b378a9-3aaf-4a64-aa79-13d074e73832/calzado-air-jordan-1-zoom-cmft-xfRL7G.png",width:340, class:"m-1") %>
+          <h5><%= sneaker.name %> <%= sneaker.model %></h5>
+          <p>$<%= sneaker.price %></p>
+          <p>
+            <%= link_to "Show this sneaker", sneaker %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+
+    <%= link_to "New sneaker", new_sneaker_path %>
+
+      </div>
 </div>
-
-<%= link_to "New sneaker", new_sneaker_path %>
