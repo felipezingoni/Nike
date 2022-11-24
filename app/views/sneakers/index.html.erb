@@ -3,8 +3,8 @@
 
 
 <div class="row">
-  <div class="col-3">
-
+  <div class="col-3 border-right">
+    <%= render 'shared/sidebar' %>
   </div>
   <div class="col-9">
     <h1>Sneakers</h1>
@@ -12,12 +12,19 @@
     <div id="sneakers" style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
       <% @sneakers.each do |sneaker| %>
         <div>
-          <%= image_tag("https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/b0b378a9-3aaf-4a64-aa79-13d074e73832/calzado-air-jordan-1-zoom-cmft-xfRL7G.png",width:340, class:"m-1") %>
-          <h5><%= sneaker.name %> <%= sneaker.model %></h5>
-          <p>$<%= sneaker.price %></p>
-          <p>
+          <% if sneaker.photo.attached? %>
+            <div style="overflow: hidden; ">
+              <%= image_tag sneaker.photo, width:340, class:"m-1 photo-sneaker" %>
+            </div>
+          <% else %>
+            <%= image_tag("https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/b0b378a9-3aaf-4a64-aa79-13d074e73832/calzado-air-jordan-1-zoom-cmft-xfRL7G.png",width:340, class:"m-1") %>
+          <% end %>
+          <h5 class="font"><%= sneaker.name %> <%= sneaker.model %></h5>
+          <h5 class="font2"> <%= sneaker.description %></h5>
+          <p class="font">$<%= sneaker.price %></p>
+          <%# <p>
             <%= link_to "Show this sneaker", sneaker %>
-          </p>
+          <%# </p> %>
         </div>
       <% end %>
     </div>
