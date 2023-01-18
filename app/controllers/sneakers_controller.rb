@@ -1,9 +1,9 @@
 class SneakersController < ApplicationController
-  before_action :set_sneaker, only: %i[ show edit update destroy ]
+  before_action :set_sneaker, only: %i[show edit update destroy]
 
   # GET /sneakers or /sneakers.json
   def index
-    @sneakers = Sneaker.all
+    @sneakers = Sneaker.order(created_at: :desc).all
   end
 
   # GET /sneakers/1 or /sneakers/1.json
@@ -26,9 +26,11 @@ class SneakersController < ApplicationController
     respond_to do |format|
       if @sneaker.save
         format.html { redirect_to sneaker_url(@sneaker), notice: "Sneaker was successfully created." }
+        flash[:success] = "Sneaker was successfully created."
         format.json { render :show, status: :created, location: @sneaker }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        # format.html { render :new, status: :unprocessable_entity }
+        flash[:success] = "There was an error"
         format.json { render json: @sneaker.errors, status: :unprocessable_entity }
       end
     end

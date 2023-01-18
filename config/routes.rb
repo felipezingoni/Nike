@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :sneakers
-  resources :controllers
-  root 'pages#home'
 
+  root 'pages#home'
+  resources :order_items, only: [:create]
+  resources :orders, only: [:show] do
+    get '/current', to: 'orders#current', on: :collection
+  end
 end

@@ -11,7 +11,7 @@
 
     <div id="sneakers" style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
       <% @sneakers.each do |sneaker| %>
-        <div>
+        <%= link_to sneaker,style:"text-decoration: none;" do %>
           <% if sneaker.photo.attached? %>
             <div style="overflow: hidden; ">
               <%= image_tag sneaker.photo, width:340, class:"m-1 photo-sneaker" %>
@@ -22,10 +22,13 @@
           <h5 class="font"><%= sneaker.name %> <%= sneaker.model %></h5>
           <h5 class="font2"> <%= sneaker.description %></h5>
           <p class="font">$<%= sneaker.price %></p>
-          <%# <p>
-            <%= link_to "Show this sneaker", sneaker %>
-          <%# </p> %>
-        </div>
+
+          <% if user_signed_in? %>
+              <%= button_to "add to card", order_items_path(sneaker_id: sneaker.id), method: :post, data:{turbo: false }, class:"boton-add" %>
+            <% else %>
+              <%= link_to "inicia sesión", new_user_session_path  %>
+            <% end %>
+        <% end %>
       <% end %>
     </div>
 

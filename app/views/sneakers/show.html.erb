@@ -1,6 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @sneaker %>
+<%= button_to "add to card", order_items_path(sneaker_id: params[:id]), method: :post, data:{turbo: false }  %>
+<%= link_to "agregalo a tu carrito de compras", order_items_path(sneaker_id: params[:id]), method: :post, data:{turbo: false }%>
+
 
 <div>
   <%= link_to "Edit this sneaker", edit_sneaker_path(@sneaker) %> |

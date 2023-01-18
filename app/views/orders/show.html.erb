@@ -1,0 +1,10 @@
+<h2>carrito de compras </h2>
+
+<% @order.order_items.each do |order_item|  %>
+  <p><%= order_item.sneaker.name %></p>
+  <p><%= order_item.sneaker.model %></p>
+  <p><%= order_item.sneaker.price %></p>
+<% end %>
+
+<h2>total</h2>
+<h5><%= @order.order_items.map {|i| i.sneaker.price}.sum  %></h5>
