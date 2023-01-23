@@ -11,8 +11,6 @@ class OrderItemsController < ApplicationController
     end
   end
 
-  private
-
   def current_order
     order = Order.where(user_id: current_user.id, status: true).order(updated_at: :desc).first
     order || Order.create(user_id: current_user.id)

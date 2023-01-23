@@ -3,7 +3,13 @@ class SneakersController < ApplicationController
 
   # GET /sneakers or /sneakers.json
   def index
-    @sneakers = Sneaker.order(created_at: :desc).all
+    # @sneakers = Sneaker.order(created_at: :desc).all
+    @order = Order.where(user_id: current_user, status: true).last
+    if params[:query].present?
+      @sneakers = Sneaker.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @sneakers = Sneaker.order(created_at: :desc).all
+    end
   end
 
   # GET /sneakers/1 or /sneakers/1.json

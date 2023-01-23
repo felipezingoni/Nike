@@ -8,3 +8,6 @@
 
 <h2>total</h2>
 <h5><%= @order.order_items.map {|i| i.sneaker.price}.sum  %></h5>
+<h5><%= @order.order_items.count  %></h5>
+
+<%= link_to "Pagar", order_checkout_index_path(@order), method: :post  %>

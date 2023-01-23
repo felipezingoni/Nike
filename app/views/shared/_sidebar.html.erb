@@ -5,30 +5,37 @@
 
   <h4 class="d-flex justify-content-center m-4">Calzado(<%= Sneaker.count %>)</h4>
 
-  <div class="px-5 line">
+  <%= form_with url: sneakers_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a sneakers"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+
+  <%= form_tag(sneakers_path, method: :get, class: "m-2") do %>
     <h5 class="title-side">Genero</h5>
-    <div class="p-3">
-      <p>Hombre</p>
-      <p>Mujer</p>
-      <p>Unisex</p>
-    </div>
-  </div>
+    <% @sneakers.each do |sneaker| %>
+      <%= check_box_tag 'Nike Jordan', 'calzado para hombres'%>
+    <% end %>
+  <% end %>
 
-  <div class="px-5 line">
-    <h5 class="title-side">Comprar por precio</h5>
-    <div class="p-3">
-      <p>Hombre</p>
-      <p>Mujer</p>
-      <p>Unisex</p>
-    </div>
-  </div>
 
-  <div class="px-5 line">
-    <h5 class="title-side">Marca</h5>
-    <div class="p-3">
-      <p>Jordan</p>
-      <p>Air Force</p>
-      <p>Air Max</p>
+    <div class="px-5 line">
+      <h5 class="title-side">Comprar por precio</h5>
+      <div class="p-3">
+        <p>Hombre</p>
+        <p>Mujer</p>
+        <p>Unisex</p>
+      </div>
     </div>
-  </div>
+
+    <div class="px-5 line">
+      <h5 class="title-side">Marca</h5>
+      <div class="p-3">
+
+      </div>
+    </div>
+
 </div>

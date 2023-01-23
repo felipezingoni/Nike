@@ -85,3 +85,27 @@
   border-right-style: solid;
   padding: 0;
 }
+
+.num {
+  margin: 0;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute !important;
+  top: 28px;
+  right: 0px;
+  backdrop-filter: blur(32px);
+  color: #000000c2;
+  border: 1px solid #6e6e6e;
+}
+
+.dropdown-item {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

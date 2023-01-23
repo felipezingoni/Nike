@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :orders, only: [:show] do
     get '/current', to: 'orders#current', on: :collection
   end
+  resources :checkout, only: [:create]
 end
