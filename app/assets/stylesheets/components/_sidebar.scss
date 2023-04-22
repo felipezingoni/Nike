@@ -4,13 +4,19 @@
 
 .line {
   border-top: solid 1px #e5e5e5;
-  line-height: 24px;
+  line-height: 30px;
   margin-left: -2px;
   margin: auto;
-  width: 75%;
+  width: 85%;
 }
 
 .title-side {
   margin-top: 20px;
   margin-bottom: 0px;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: black;
 }

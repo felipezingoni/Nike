@@ -5,8 +5,9 @@ class SneakersController < ApplicationController
   def index
     # @sneakers = Sneaker.order(created_at: :desc).all
     @order = Order.where(user_id: current_user, status: true).last
-    if params[:query].present?
-      @sneakers = Sneaker.where("name ILIKE ?", "%#{params[:query]}%")
+    if params["search"]
+      @filter = params["search"]["sneakers"].reject(&:blank?)
+      @sneakers = @filter.empty? ? Sneaker.all : Sneaker.all.tagged_with(@filter, any: true)
     else
       @sneakers = Sneaker.order(created_at: :desc).all
     end

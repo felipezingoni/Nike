@@ -66,6 +66,8 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    acts-as-taggable-on (5.0.0)
+      activerecord (>= 4.2.8)
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
     amq-protocol (2.3.2)
@@ -263,6 +265,7 @@ PLATFORMS
   arm64-darwin-22
 
 DEPENDENCIES
+  acts-as-taggable-on
   bootsnap
   capybara
   debug
